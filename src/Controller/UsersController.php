@@ -29,13 +29,13 @@ class UsersController extends Controller
 {
     public function view()
     {
-    	 $articles = $this->Users->find('all');
+    	  $articles = $this->Users->find('all');
         echo json_encode($articles);
     }
-       public function viewById($id)
+    public function viewById($id)
     {
-   /*     $article = $this->Users->get($id);
-        $this->set(compact('article'));*/
-           echo json_encode($id);
+        
+          $article = $this->Users->get(intval($id));
+          echo json_encode($article);       
     }
  }

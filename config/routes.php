@@ -51,8 +51,7 @@ Router::scope('/', function ($routes) {
     $routes->connect('/', ['controller' => 'App', 'action' => 'view']);
     $routes->connect('/all', ['controller' => 'App', 'action' => 'view']);
     $routes->connect('/user', ['controller' => 'Users', 'action' => 'view']);
-    $routes->connect('/userid/:id', ['controller' => 'Users', 'action' => 'viewById']);
-
+    $routes->connect('/userid/:id', ['controller' => 'Users', 'action' => 'viewById'],['id' => '\d+', 'pass' => ['id']]);
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */
@@ -74,6 +73,13 @@ Router::scope('/', function ($routes) {
      * You can remove these routes once you've connected the
      * routes you want in your application.
      */
+    $routes->fallbacks('DashedRoute');
+});
+
+
+
+Router::prefix('admin', function ($routes) {
+  $routes->connect('/userid/:id', ['controller' => 'Users', 'action' => 'viewById'],['id' => '\d+', 'pass' => ['id']]);
     $routes->fallbacks('DashedRoute');
 });
 
