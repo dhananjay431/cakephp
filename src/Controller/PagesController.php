@@ -41,8 +41,8 @@ class PagesController extends AppController
     }
     public function display()
     {
-        echo 123;
-/*        $path = func_get_args();
+       
+        $path = func_get_args();
 
         $count = count($path);
         if (!$count) {
@@ -65,6 +65,6 @@ class PagesController extends AppController
                 throw $e;
             }
             throw new NotFoundException();
-        }*/
+        }
     }
 }

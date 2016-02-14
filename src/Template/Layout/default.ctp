@@ -1,19 +1,17 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-            cakedemo
-    </title>
-        <script src="webroot/js/angular.min.js"></script>
-        <script src="webroot/js/angular-ui-router.js"></script>
-        <script src="webroot/app/app.module.js"></script>
 
-        <script src="webroot/app/home/home.ctrl.js"></script>
-        
+    </title>
+
 </head>
-<body ng-app="cakedemo">
-<?php $this->fetch('content'); ?>
-    <ui-view></ui-view>
+<body>
+
+        <?= $this->Flash->render() ?>
+        <?= $this->fetch('content') ?>
+
 </body>
 </html>

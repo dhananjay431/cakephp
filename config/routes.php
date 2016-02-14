@@ -47,7 +47,7 @@ Router::scope('/', function ($routes) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
-    //$routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+   // $routes->connect('/', ['controller' => 'Pages', 'action' => 'home']);
     $routes->connect('/', ['controller' => 'App', 'action' => 'view']);
     $routes->connect('/all', ['controller' => 'App', 'action' => 'view']);
     $routes->connect('api/v1/user', ['controller' => 'Users', 'action' => 'view1']);
