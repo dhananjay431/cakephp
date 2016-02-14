@@ -34,7 +34,6 @@ class UsersController extends Controller
     }
     public function viewById($id)
     {
-        
           $article = $this->Users->get(intval($id));
           echo json_encode($article);       
     }
