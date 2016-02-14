@@ -3,13 +3,14 @@
 	.controller('homeCtrl',function($scope, $http){
 		console.log('home');
 			$scope.data={};
-	   $http.get("api/v1/userid/5")
+	   $http.get("/api/v1/user")
     .then(function(response) {
-        //First function handles success
-        $scope.data=response;
+
+        $scope.data=response.data.data;
+
    
     }, function(response) {
-        //Second function handles error
+    
 
     });
 	});

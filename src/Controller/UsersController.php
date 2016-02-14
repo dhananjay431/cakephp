@@ -29,11 +29,17 @@ class UsersController extends Controller
 {
     public function view1()
     {
+      $resp=array();
+      $resp['msg']=true;
+
     	$articles = $this->Users->find('all');
-        echo json_encode($articles);
+      $resp['data']=$articles;
 
-         $this->render();
+           $this->autoRender = false;
+          $this->response->type('json');
 
+          $json = json_encode($resp);
+          $this->response->body($json);
     }
     public function viewById($id)
     {
