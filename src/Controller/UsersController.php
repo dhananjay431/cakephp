@@ -43,7 +43,15 @@ class UsersController extends Controller
     }
     public function viewById($id)
     {
-          $article = $this->Users->get(intval($id));
-          echo json_encode($article);       
+            $resp=array();
+            $resp['msg']=true;
+            $article = $this->Users->get(intval($id));
+         
+           $resp['data']=$article;
+           $this->autoRender = false;
+          $this->response->type('json');
+
+          $json = json_encode($resp);
+          $this->response->body($json);      
     }
  }
