@@ -50,8 +50,8 @@ Router::scope('/', function ($routes) {
     //$routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
     $routes->connect('/', ['controller' => 'App', 'action' => 'view']);
     $routes->connect('/all', ['controller' => 'App', 'action' => 'view']);
-    $routes->connect('/user', ['controller' => 'Users', 'action' => 'view']);
-    $routes->connect('/userid/:id', ['controller' => 'Users', 'action' => 'viewById'],['id' => '\d+', 'pass' => ['id']]);
+    $routes->connect('api/v1/user', ['controller' => 'Users', 'action' => 'view1']);
+    $routes->connect('api/v1/userid/:id', ['controller' => 'Users', 'action' => 'viewById'],['id' => '\d+', 'pass' => ['id']]);
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
      */

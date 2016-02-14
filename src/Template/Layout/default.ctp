@@ -13,7 +13,7 @@
         
 </head>
 <body ng-app="cakedemo">
-    <h1> 456 789 123 </h1>
+<?php $this->fetch('content'); ?>
     <ui-view></ui-view>
 </body>
 </html>

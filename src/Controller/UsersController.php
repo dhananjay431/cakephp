@@ -27,10 +27,13 @@ use Cake\Event\Event;
  */
 class UsersController extends Controller
 {
-    public function view()
+    public function view1()
     {
-    	  $articles = $this->Users->find('all');
+    	$articles = $this->Users->find('all');
         echo json_encode($articles);
+
+         $this->render();
+
     }
     public function viewById($id)
     {
