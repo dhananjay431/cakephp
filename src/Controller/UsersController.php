@@ -34,24 +34,35 @@ class UsersController extends Controller
 
     	$articles = $this->Users->find('all');
       $resp['data']=$articles;
-
-           $this->autoRender = false;
-          $this->response->type('json');
-
-          $json = json_encode($resp);
-          $this->response->body($json);
+      $this->autoRender = false;
+      $this->response->type('json');
+      $json = json_encode($resp);
+      $this->response->body($json);
     }
     public function viewById($id)
     {
+     // $arr=$this->request->input('json_decode');
+      if($this->request->is('post'))
+      {
+        $data = $this->request->input();
             $resp=array();
             $resp['msg']=true;
             $article = $this->Users->get(intval($id));
-         
-           $resp['data']=$article;
-           $this->autoRender = false;
-          $this->response->type('json');
+            $resp['data']=$article;
+            $this->autoRender = false;
+            echo $data;
+     
+      }
+      else
+      {
+        echo 'method';
+      }
 
-          $json = json_encode($resp);
-          $this->response->body($json);      
+     // $data = $this->request->input();
+      //echo $data;
+          //$data=$this->request->input();
+      //$data=$this->request->params('a1');
+    
+             
     }
  }

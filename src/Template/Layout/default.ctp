@@ -8,7 +8,7 @@
         <script src="webroot/js/angular-ui-router.js"></script>
         <script src="webroot/app/app.module.js"></script>
         <script src="webroot/app/home/home.ctrl.js"></script>
-        <script src="webroot/js/materialize.min.js"></script>
+        
         <script type="text/javascript">
           $(document).ready(function(){
 			    $('.collapsible').collapsible({
@@ -17,7 +17,10 @@
 			  });
         </script>
 
+        <!-- 
         <link rel="stylesheet" type="text/css" href="webroot/css/materialize.css">
+        <script src="webroot/js/materialize.min.js"></script>
+         -->
 </head>
 <body ng-app="cakedemo">
     <ui-view></ui-view>
